@@ -1,12 +1,27 @@
+# for support join here [TorrentLeech-Gdrive](https://telegram.dog/torrentleechgdrivesupport)
+# working example group [Leech Here](https://telegram.dog/torrentleechgdrive)
+
 # Telegram Torrent Leecher 🔥🤖
 
 A Telegram Torrent (and youtube-dl) Leecher based on [Pyrogram](https://github.com/pyrogram/pyrogram)
 
-### All credit goes to SpEcHiDe
+# Benefits :-
+    ✓ Telegram File mirrorring to cloud along with its unzipping, unrar and untar
+    ✓ Drive/Teamdrive support/All other cloud services rclone.org supports
+    ✓ Unzip
+    ✓ Unrar
+    ✓ Untar
+    ✓ Custom file name
+    ✓ Custom commands
+    ✓ Get total size of your working cloud directory
+    ✓ Now you can also upload files downloaded from /ytdl command to gdrive using `/ytdl gdrive` command.
+    ✓ 
+
+### Credit goes to SpEcHiDe for his Publicleech repo.
 
 ## installing
 
-### The Easy Way
+### The Easy Way (Fork this repo and tap on deploy button)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
@@ -81,6 +96,12 @@ and everythin except `[NAME]`
 6. Paste copied config in `RCLONE_CONFIG`
 
 7. Hit deploy button.
+8. Examples:-
+<p align="center">
+
+  <img src="https://raw.githubusercontent.com/gautamajay52/TorrentLeech-Gdrive/master/rclone.jpg" width="470" height="150">
+
+</p>
 
 ## FAQ
 
@@ -120,15 +141,45 @@ and everythin except `[NAME]`
 
 * `YTDL_COMMAND`
 
+* `TELEGRAM_LEECH_COMMAND_G`
+
+* `INDEX_LINK`: (Without `/` at last of the link, otherwise u will get error) During creating index, plz fill `Default Root ID` with the id of your `DESTINATION_FOLDER` after creating. Otherwise index will not work properly.
 ## Available Commands
 
 * `/ytdl`: This command should be used as reply to a [supported link](https://ytdl-org.github.io/youtube-dl/supportedsites.html)
+
+* `/ytdl gdrive`: This will download and upload to your cloud.
 
 * `/leech`: This command should be used as reply to a magnetic link, a torrent link, or a direct link. [this command will SPAM the chat and send the downloads a seperate files, if there is more than one file, in the specified torrent]
 
 * `/leech archive`: This command should be used as reply to a magnetic link, a torrent link, or a direct link. [This command will create a .tar.gz file of the output directory, and send the files in the chat, splited into PARTS of 1024MiB each, due to Telegram limitations]
 
-* `/gleech`: This command should be used as reply to a magnetic link, a torrent link, or a direct link. And this will download the files from the given link or torrent and will upload to the drive using rclone.
+* `/gleech`: This command should be used as reply to a magnetic link, a torrent link, or a direct link. And this will download the files from the given link or torrent and will upload to the cloud using rclone.
+
+* `/gleech archive` This command will compress the folder/file and will upload to your cloud.
+
+* `/leech unzip`: This will unzip the .zip file and dupload to telegram.
+
+* `/gleech unzip`: This will unzip the .zip file and upload to cloud.
+
+* `/leech unrar`: This will unrar the .rar file and dupload to telegram.
+
+* `/gleech unrar`: This will unrar the .rar file and upload to cloud.
+
+* `/leech untar`: This will untar the .tar file and upload to telegram.
+
+* `/gleech untar`: This will untar the .tar file and upload to cloud..
+
+* `/tleech`: This will mirror the telegram files to ur respective cloud cloud.
+
+* `/tleech unzip`: This will unzip the .zip telegram file and upload to cloud.
+
+* `/tleech unrar`: This will unrar the .rar telegram file and upload to cloud.
+
+* `/tleech untar`: This will untar the .tar telegram file and upload to cloud.
+
+* `/getsize`: This will give you total size of your destination folder in cloud.
+
 
 * [Only work with direct link for now]It is like u can add custom name as prefix of the original file name.
 Like if your file name is `gk.txt` uploaded will be what u add in `CUSTOM_FILE_NAME` + `gk.txt`
@@ -152,14 +203,10 @@ the file will be uploaded as `new.txt`.
 * if file is a TAR archive, [read this](https://t.me/c/1434259219/104) to know how to uncompress.
 
 
-## Issues or Feature Requests
-
-* search for known issues, [here](https://t.me/c/1434259219/118).
-
-* add issues / feature requests, [here](https://github.com/SpEcHiDe/PublicLeech/issues/new).
-
-
 ## Credits, and Thanks to
+* [GautamKumar(me)](https://github.com/gautamajay52/TorrentLeech-Gdrive) 😬
+* [Publicleech](https://github.com/SpEcHiDe/PublicLeech) for his wonderful code😚
+* [Rclone Team](https://rclone.org) for theirs awesome tool☁️
 * [Dan Tès](https://telegram.dog/haskell) for his [Pyrogram Library](https://github.com/pyrogram/pyrogram)
 * [Robots](https://telegram.dog/Robots) for their [@UploadBot](https://telegram.dog/UploadBot)
 * [@AjeeshNair](https://telegram.dog/AjeeshNait) for his [torrent.ajee.sh](https://torrent.ajee.sh)

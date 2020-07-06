@@ -1,6 +1,6 @@
 {
   "name": "Telegram Torrent Leecher",
-  "description": "A Telegram Torrent (and youtube-dl) Leecher based on Pyrogram. Powered by @ThankTelegram!",
+  "description": "A Telegram Torrent (and youtube-dl) Leecher based on Pyrogram. Powered by @torrentleechgdrivesupport!",
   "keywords": [
     "telegram",
     "best",
@@ -15,7 +15,7 @@
     "leecher"
   ],
   "repository": "https://github.com/gautamajay52/TorrentLeech-Gdrive",
-  "success_url": "https://github.com/gautamajay52",
+  "success_url": "https://t.me/torrentleechgdrivesupport",
   "website": "https://github.com/gautamajay52/TorrentLeech-Gdrive",
   "env": {
     "ENV": {
@@ -50,7 +50,7 @@
     },
     "EDIT_SLEEP_TIME_OUT": {
       "description": "should be an integer. Number of seconds to wait before editing a message.",
-      "value": "1",
+      "value": "15",
       "required": false
     },
     "MAX_TIME_TO_WAIT_FOR_TORRENTS_TO_START": {
@@ -70,15 +70,27 @@
       "required": false
     },
     "LEECH_COMMAND": {
-      "description": "Enter your custom leech command like leech1 and so on. Default is leech",
+      "description": "Enter your custom leech command like /leech@urgroupname and so on. Default is /leech",
+      "required": false
+    },
+    "INDEX_LINK": {
+      "description": "Enter your index link:",
+      "required": false
+    },
+    "GLEECH_COMMAND": {
+      "description": "Enter your custom gleech command like /gleech1@urgroupname and so on. Default is /gleech",
+      "required": false
+    },
+    "TELEGRAM_LEECH_COMMAND_G": {
+      "description": "Enter your custom tleech command like /tleech1@urgroupname and so on. Default is /tleech",
       "required": false
     },
     "YTDL_COMMAND": {
-      "description": "Enter your custom ytdl command like ytdl1 and so on. Default is ytdl.",
+      "description": "Enter your custom ytdl command like ytdl1@urgroupname and so on. Default is /ytdl.",
       "required": false
     },
     "RCLONE_CONFIG": {
-      "description": "Enter your copied text from rclone config. Compulsory for /gleech command ",
+      "description": "Enter your copied text from rclone config. Compulsory for /gleech as well as /tleech command ",
       "required": false
     },
     "DESTINATION_FOLDER": {
@@ -86,8 +98,8 @@
       "required": false
     },
     "CUSTOM_FILE_NAME": {
-      "description": "fill with name u want to prefix the file name like ur channel username🙊, keep empty for do nothing, but add to ur config vars even without input",
-      "value": ""
+      "description": "fill with name u want to prefix the file name like ur channel username🙊, keep empty for do nothing, but add to ur config vars even without input.",
+      "required": false
     }
   },
   "addons": [
@@ -98,6 +110,8 @@
     "url": "https://github.com/SayanthD/aria2-heroku"
   }, {
     "url": "https://github.com/amivin/rclone-heroku"
+  }, {
+    "url": "https://github.com/HasibulKabir/heroku-buildpack-rarlab"
   }, {
     "url": "heroku/python"
   }],

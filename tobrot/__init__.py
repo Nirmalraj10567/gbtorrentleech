@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
+# (c) Shrimadhav U K | gautamajay52
 
 import os
 
@@ -36,4 +36,6 @@ LEECH_COMMAND = Config.LEECH_COMMAND
 YTDL_COMMAND = Config.YTDL_COMMAND
 RCLONE_CONFIG = Config.RCLONE_CONFIG
 DESTINATION_FOLDER = Config.DESTINATION_FOLDER
-
+GLEECH_COMMAND = Config.GLEECH_COMMAND
+INDEX_LINK = Config.INDEX_LINK
+TELEGRAM_LEECH_COMMAND_G = Config.TELEGRAM_LEECH_COMMAND_G

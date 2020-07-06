@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-# (c) Shrimadhav U K
+# (c) Shrimadhav U K | gautamajay52
 
 # the logging things
 import logging
@@ -24,25 +24,29 @@ from tobrot import (
     API_HASH,
     AUTH_CHANNEL,
     LEECH_COMMAND,
-    YTDL_COMMAND
+    YTDL_COMMAND,
+    GLEECH_COMMAND,
+    TELEGRAM_LEECH_COMMAND_G
 )
 
 from pyrogram import Client, Filters, MessageHandler, CallbackQueryHandler
 
 from tobrot.plugins.new_join_fn import new_join_f, help_message_f, rename_message_f
 from tobrot.plugins.incoming_message_fn import incoming_message_f, incoming_youtube_dl_f, incoming_purge_message_f, incoming_gdrive_message_f
+from tobrot.plugins.rclone_size import check_size_g
 from tobrot.plugins.status_message_fn import (
     status_message_f,
     cancel_message_f,
     exec_message_f,
-    upload_document_f,
-    eval_message_f
+    upload_document_f
+    #eval_message_f
 )
 from tobrot.plugins.call_back_button_handler import button
 from tobrot.plugins.custom_thumbnail import (
     save_thumb_nail,
     clear_thumb_nail
 )
+from tobrot.helper_funcs.download import down_load_media_f
 
 
 if __name__ == "__main__" :
@@ -66,15 +70,27 @@ if __name__ == "__main__" :
     #
     incoming_gdrive_message_handler = MessageHandler(
         incoming_gdrive_message_f,
-        filters=Filters.command(["gleech"]) & Filters.chat(chats=AUTH_CHANNEL)
+        filters=Filters.command([f"{GLEECH_COMMAND}"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(incoming_gdrive_message_handler)
+    #
+    incoming_telegram_download_handler = MessageHandler(
+        down_load_media_f,
+        filters=Filters.command([f"{TELEGRAM_LEECH_COMMAND_G}"]) & Filters.chat(chats=AUTH_CHANNEL)
+    )
+    app.add_handler(incoming_telegram_download_handler)
     #
     incoming_purge_message_handler = MessageHandler(
         incoming_purge_message_f,
         filters=Filters.command(["purge"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(incoming_purge_message_handler)
+    #
+    incoming_size_checker_handler = MessageHandler(
+        check_size_g,
+        filters=Filters.command(["getsize"]) & Filters.chat(chats=AUTH_CHANNEL)
+    )
+    app.add_handler(incoming_size_checker_handler)
     #
     incoming_youtube_dl_handler = MessageHandler(
         incoming_youtube_dl_f,
@@ -100,11 +116,13 @@ if __name__ == "__main__" :
     )
     app.add_handler(exec_message_handler)
     #
+    '''
     eval_message_handler = MessageHandler(
         eval_message_f,
         filters=Filters.command(["eval"]) & Filters.chat(chats=AUTH_CHANNEL)
     )
     app.add_handler(eval_message_handler)
+    '''
     #
     rename_message_handler = MessageHandler(
         rename_message_f,

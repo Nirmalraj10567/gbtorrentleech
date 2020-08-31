@@ -232,6 +232,12 @@ async def g_clonee(client, message):
     g_id = message.from_user.id
     if message.reply_to_message is not None:
         LOGGER.info(message.reply_to_message.text)
-        #todo
+        gclone = CloneHelper(message)
+        gclone.config()
+        a, h = gclone.get_id()
+        LOGGER.info(a)
+        LOGGER.info(h)
+        await gclone.gcl()
+        await gclone.link_gen_size()
     else:
         await message.reply_text("You should reply to a message, which format should be [ID of Gdrive file/folder Name of the file/folder]\nOr read Github for detailled information")
